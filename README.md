@@ -1,4 +1,4 @@
-codebase
+Codebase
 ========
 
-Codes, scripts &amp; secrets
+Codes, Scripts &amp; Secrets
