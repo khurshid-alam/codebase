@@ -1,0 +1,192 @@
+<html xmlns:tomboy="http://beatniksoftware.com/tomboy" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Syncevolution</title><style type="text/css">
+        
+	body { font-family:'Cantarell'; }
+	h1 { font-size: xx-large;
+     	     font-weight: bold;
+     	     border-bottom: 1px solid black; }
+	div.note {
+		   position: relative;
+		   display: block;
+		   padding: 5pt;
+		   margin: 5pt; 
+		   white-space: -moz-pre-wrap; /* Mozilla */
+ 	      	   white-space: -pre-wrap;     /* Opera 4 - 6 */
+ 	      	   white-space: -o-pre-wrap;   /* Opera 7 */
+ 	      	   white-space: pre-wrap;      /* CSS3 */
+ 	      	   word-wrap: break-word;      /* IE 5.5+ */ }
+	</style></head><body><div class="note" id="Syncevolution"><a name="syncevolution"></a><h1>Syncevolution</h1>
+
+<b><span style="font-size:large">Sync Multiple Evolution calendars  with Google calendars (Manual sync)</span></b>
+
+syncevolution --configure --template webdav <a style="color:#3465A4" href="username=sunnysigara@gmail.com">username=sunnysigara@gmail.com</a> password=**** target-config@gcal
+
+syncevolution --configure --source-property evolutionsource=Work --source-property "type=Evolution Calendar" @default workcal
+OR
+syncevolution --configure backend=evolution-calendar database=Work @default workcal
+
+syncevolution --configure database=<a style="color:#3465A4" href="https://www.google.com:443/calendar/dav/38fru3jg869681hg315rd7hiao%40group.calendar.google.com/events/">https://www.google.com:443/calendar/dav/38fru3jg869681hg315rd7hiao%40group.calendar.google.com/events/</a> backend=caldav target-config@gcal workcal
+
+syncevolution --configure --template SyncEvolution_Client syncURL=local://@gcal username= password= gcal workcal
+
+syncevolution --configure sync=two-way backend=calendar database=Work gcal workcal  #backend is not necessary
+OR
+syncevolution --configure sync=two-way database=Work gcal workcal 
+
+syncevolution --print-items target-config@gcal workcal    #print items on server
+syncevolution --print-items gcal workcal                       #print local items
+
+syncevolution --sync refresh-from-client gcal workcal personalcal
+
+
+<a style="color:#3465A4" href="https://www.memotoo.com/my-addressbook-and-contacts-how-to-sync.php#top">https://www.memotoo.com/my-addressbook-and-contacts-how-to-sync.php#top</a>
+
+<b><span style="font-size:large">SyncEvolution CardDav</span></b><b>:</b>
+
+
+syncevolution --configure --template webdav syncURL=<a style="color:#3465A4" href="https://dav.fruux.com:443/">https://dav.fruux.com:443/</a> <a style="color:#3465A4" href="username=sunnysigara@gmail.com">username=sunnysigara@gmail.com</a> password=***** target-config@Fruux
+
+syncevolution --configure database=<a style="color:#3465A4" href="https://dav.fruux.com:443/addressbooks/a3298289645/b3cd7380-ec93-45f5-a4d5-afb8b9afd615/">https://dav.fruux.com:443/addressbooks/a3298289645/b3cd7380-ec93-45f5-a4d5-afb8b9afd615/</a> backend=carddav target-config@fruux addressbook
+
+syncevolution --configure --template SyncEvolution_Client syncURL=local://@Fruux username= password= Fruux addressbook
+
+syncevolution --configure sync=two-way backend=contacts database=Personal fruux addressbook
+
+now disable the addressbook uri (bcz backend is enabled) in ~./config/syncevolution/default/peers/fruux/sources/addressbook.
+
+
+
+<b>Now when adding a second calendar:</b>
+
+1. Peer "fruux" has already been set up.
+
+2.Create a second calendar source: 
+   syncevolution --configure backend=evolution-contacts database=SyncML @default syncmlcon
+
+3. Import remote calendar database (url) to syncmlcon:
+    syncevolution --configure database=<a style="color:#3465A4" href="https://dav.fruux.com:443/addressbooks/<contactdatabase-ID">https://dav.fruux.com:443/addressbooks/&lt;contactdatabase-ID</a>&gt; backend=carddav target-config@fruux syncmlcon
+
+4. "SyncEvolution_Client" configuration has already been done. So its not needed
+
+5. Connect/Configure syncmlcon with the peer fruux:
+    syncevolution --configure sync=two-way database=SyncML carddav syncmlcon
+
+6. Start Sync:
+    syncevolution --sync two-way fruux syncmlcon
+
+
+
+
+
+
+
+
+
+<a style="color:#3465A4" href="https://dav.fruux.com/addressbooks/a3298289645/b3cd7380-ec93-45f5-a4d5-afb8b9afd615/">https://dav.fruux.com/addressbooks/a3298289645/b3cd7380-ec93-45f5-a4d5-afb8b9afd615/</a>
+
+
+<b>Google-carddav-url:</b>
+<a style="color:#3465A4" href="https://google.com/m8/carddav/principals/__uids__/sunnysigara@gmail.com/lists/default/">https://google.com/m8/carddav/principals/__uids__/sunnysigara@gmail.com/lists/default/</a>
+
+<b><span style="font-size:large">SyncEvolution Local Sync (EDS &gt;=2.30):</span></b>
+
+<b>Server = sparrow</b>   #peer name of computer1
+<b>Client1= crane</b>      #peer name of computer2
+
+
+<a style="color:#3465A4" href="https://syncevolution.org/wiki/synchronizing-evolution-http-howto">https://syncevolution.org/wiki/synchronizing-evolution-http-howto</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<b><span style="font-size:large">OLD METHOD:</span></b>
+
+<b>SyncEvolution Multiple Calendar Sync</b>
+
+<b>Create a new source in syncevolution:</b>
+ex: syncevolution --configure --source-property evolutionsource=Sports --source-property "type=Evolution Calendar" --source-property sync=two-way Memotoo SportsCal
+ex: syncevolution --configure --source-property evolutionsource=Soocial --source-property "type=addressbook" --source-property sync=two-way Soocial SoocialContacts
+
+see the image: 
+
+Memotoo Calendar Url:
+Personal: <a style="color:#3465A4" href="http://sync.memotoo.com/calendarICS.php?l=sunnysigara&amp;p=830f5086ac34c80afcf5e7ebb278c9b6&amp;category=86172">http://sync.memotoo.com/calendarICS.php?l=sunnysigara&amp;p=830f5086ac34c80afcf5e7ebb278c9b6&amp;category=86172</a>
+Work: <a style="color:#3465A4" href="http://sync.memotoo.com/calendarICS.php?l=sunnysigara&amp;p=830f5086ac34c80afcf5e7ebb278c9b6&amp;category=86170">http://sync.memotoo.com/calendarICS.php?l=sunnysigara&amp;p=830f5086ac34c80afcf5e7ebb278c9b6&amp;category=86170</a>
+Sports: <a style="color:#3465A4" href="https://sync.memotoo.com/calendarICS.php?l=sunnysigara&amp;p=830f5086ac34c80afcf5e7ebb278c9b6&amp;category=86178">https://sync.memotoo.com/calendarICS.php?l=sunnysigara&amp;p=830f5086ac34c80afcf5e7ebb278c9b6&amp;category=86178</a>
+
+
+
+
+<b>Sync Multiple Evolution calendars  with Google calendars (Manual sync)</b>
+
+Evolution Calendars     Google Calendars
+Personal                             Personal
+Work                                   Work
+Sports                                Sports
+-----------------------------------------------------------------Code----------------------------------------
+Work Calendar Sync:
+
+syncevolution --configure --template Google_Calendar <a style="color:#3465A4" href="syncURL=https://www.google.com/calendar/dav/GOOGLE-CALENDAR-ID@group.calendar.google.com/">syncURL=https://www.google.com/calendar/dav/GOOGLE-CALENDAR-ID@group.calendar.google.com/</a> <a style="color:#3465A4" href="username=USERNAME@gmail.com">username=USERNAME@gmail.com</a> password=**** target-config@Workcal
+
+syncevolution --configure --template SyncEvolution_Client syncURL=local://@Workcal username= password= Workcal calendar
+
+syncevolution --configure --source-property evolutionsource=Work --source-property "type=Evolution Calendar" @default Workcal
+syncevolution --configure --source-property evolutionsource=Twitter --source-property "type=Evolution Calendar" --source-property sync=one-way-from-server Workcal Workcal
+
+Now disable the default calendar under ~./config/syncevolution/default/peers/Workcal/sources/calendar by setting "sync= disabled"
+&amp; enable calendar uri under ~./config/syncevolution/default/peers/Workcal/sources/Workcal by setting "uri= calendar"
+
+First run a slow sync:
+syncevolution --sync slow Workcal
+
+then run a one way sync (without changing evolution) :
+syncevolution --sync one-way-from-server Workcal
+
+Finshed
+
+* here for local sync server is evolution &amp; client is connected to google (opposite to syncml backend)
+
+
+
+Evolution Calendars            Google Calendars
+Personal                             Personal
+Work                                  Work
+Sports                                Sports
+-----------------------------------------------------------------Code----------------------------------------
+Work Calendar Sync:
+
+syncevolution --configure --template Google_Calendar <a style="color:#3465A4" href="syncURL=https://www.google.com/calendar/dav/GOOGLE-CALENDAR-ID@group.calendar.google.com/">syncURL=https://www.google.com/calendar/dav/GOOGLE-CALENDAR-ID@group.calendar.google.com/</a> <a style="color:#3465A4" href="username=USERNAME@gmail.com">username=USERNAME@gmail.com</a> password=**** target-config@Workcal
+
+syncevolution --configure --template SyncEvolution_Client syncURL=local://@Workcal username= password= Workcal calendar
+
+syncevolution --configure --source-property evolutionsource=Work --source-property "type=Evolution Calendar" @default Workcal
+syncevolution --configure --source-property evolutionsource=Twitter --source-property "type=Evolution Calendar" --source-property sync=one-way-from-server Workcal Workcal
+
+Now disable the default calendar under ~./config/syncevolution/default/peers/Workcal/sources/calendar by setting "sync= disabled"
+&amp; enable calendar uri under ~./config/syncevolution/default/peers/Workcal/sources/Workcal by setting "uri= calendar"
+
+First run a slow sync:
+syncevolution --sync slow Workcal
+
+then run a one way sync (without changing evolution) :
+syncevolution --sync one-way-from-server Workcal
+
+Finshed
+
+<ul><li dir="ltr">here for local sync server is evolution &amp; client is connected to google (opposite to syncml backend)</li></ul>
+
+
+
+</div></body></html>
