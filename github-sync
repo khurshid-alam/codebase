@@ -15,9 +15,9 @@ if [ -d .git ]; then
   else  
     git add -A
     git commit -m "Flies modified"
-    git ls-remote "git@github.com:khurshid-alam/Codebased.git"
+    git ls-remote "git@github.com:khurshid-alam/$reponame.git"
     if [ "$?" -ne 0 ]; then
-      curl -XPOST -H 'Authorization: token f71a813636cca0e128dc92cf980646cf662de518' https://api.github.com/user/repos -d $string >~/.cache/github/github.log
+      curl -XPOST -H 'Authorization: token f71a813636cca0e128dc92cf980646cf662de518' https://api.github.com/user/repos -d $string
       git remote add origin git@github.com:khurshid-alam/$reponame.git
       notify-send "github Sync Starts" "syncing local repo with github" -i "/home/sunny/.icons/AwOkenDark/clear/24x24/apps/github.png"
       git push origin master
@@ -27,7 +27,6 @@ if [ -d .git ]; then
       sleep 4s
       xdg-open $clone_url
     else
-      #git remote add origin git@github.com:khurshid-alam/$reponame.git
       notify-send "github Sync Starts" "syncing local repo with github" -i "/home/sunny/.icons/AwOkenDark/clear/24x24/apps/github.png"
       git push origin master
       clone_url="https://github.com/khurshid-alam/$reponame.git"
@@ -52,7 +51,6 @@ else
     sleep 4s
     xdg-open $clone_url
   else
-    #git remote add origin git@github.com:khurshid-alam/$reponame.git
     notify-send "github Sync Starts" "syncing local repo with github" -i "/home/sunny/.icons/AwOkenDark/clear/24x24/apps/github.png"
     git push origin master
     clone_url="https://github.com/khurshid-alam/$reponame.git"
