@@ -1,0 +1,65 @@
+<html xmlns:tomboy="http://beatniksoftware.com/tomboy" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><title>UDev/UDisk</title><style type="text/css">
+        
+	body { font-family:'Cantarell'; }
+	h1 { font-size: xx-large;
+     	     font-weight: bold;
+     	     border-bottom: 1px solid black; }
+	div.note {
+		   position: relative;
+		   display: block;
+		   padding: 5pt;
+		   margin: 5pt; 
+		   white-space: -moz-pre-wrap; /* Mozilla */
+ 	      	   white-space: -pre-wrap;     /* Opera 4 - 6 */
+ 	      	   white-space: -o-pre-wrap;   /* Opera 7 */
+ 	      	   white-space: pre-wrap;      /* CSS3 */
+ 	      	   word-wrap: break-word;      /* IE 5.5+ */ }
+	</style></head><body><div class="note" id="UDev/UDisk"><a name="udev/udisk"></a><h1>UDev/UDisk</h1>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+<b>Restrat udev in ubuntu:</b>
+
+service udev restrat
+
+udevadm control --reload-rules
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+<b>listen D-Bus events for any USB device:</b>
+
+import dbus
+import gobject
+from dbus.mainloop.glib import DBusGMainLoop
+
+def device_added_callback(device):
+    print 'Device %s was added' % (device)
+
+def device_changed_callback(device):
+    print 'Device %s was changed' % (device)
+
+#must be done before connecting to DBus
+DBusGMainLoop(set_as_default=True)
+
+bus = dbus.SystemBus()
+
+proxy = bus.get_object("org.freedesktop.UDisks", 
+                       "/org/freedesktop/UDisks")
+iface = dbus.Interface(proxy, "org.freedesktop.UDisks.Device")
+
+devices = iface.get_dbus_method('EnumerateDevices')()
+
+print '%s' % (devices)
+
+#addes two signal listeners
+iface.connect_to_signal('DeviceAdded', device_added_callback)
+iface.connect_to_signal('DeviceChanged', device_changed_callback)
+
+#start the main loop
+mainloop = gobject.MainLoop()
+mainloop.run()
+
+#currently this is handled by udev-notify package (which uses pyudev).
+
+<a style="color:#3465A4" href="http://askubuntu.com/questions/27948/usb-device-changes-using-udev-and-d-bus?rq=1">http://askubuntu.com/questions/27948/usb-device-changes-using-udev-and-d-bus?rq=1</a>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------</div></body></html>

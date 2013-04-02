@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#required component: ABBYY Lingvo, flac 123
+#http://www.lodossteam.com/blog/the-best-bash-scripts
+
+BLA=`xsel -o`;
+WORD=`echo $BLA | tr '[:upper:]' '[:lower:]'`
+VARIABLE=${WORD:0:1};
+flac123 -d alsa -q /mnt/mmedia/sounds/Lingvo_x3-Sounds_En_Fr_De-flac/Sound_En/$VARIABLE/$WORD.flac
+
