@@ -1,4 +1,5 @@
 
+
 Ubuntu Packaging Guide
 ----------------------
 
@@ -189,8 +190,10 @@ Change HTTP To SSH:
 > for ssh public-key paraphrase is used.
 
 
+----------
 
-
+Sources:
+--------
 
 http://www.vogella.com/articles/Git/article.html
 
