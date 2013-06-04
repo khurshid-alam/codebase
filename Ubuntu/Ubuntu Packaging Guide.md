@@ -133,6 +133,8 @@ or
 > *_source.changes (used for uploading the source package) files are signed using your GPG key.
 
 
+Finally Upload to ppa:
+
     dput ppa:your-lp-id/ppa <source.changes>
 
 This command upload package & changes to ppa.
