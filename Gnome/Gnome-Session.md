@@ -193,7 +193,7 @@ Add the link to the Startup Applications application in Ubuntu if you want to us
 ----------
 
 
-Run a script only at the very first boot:
+***Run a script only at the very first boot:***
 
 **example1:**
 
