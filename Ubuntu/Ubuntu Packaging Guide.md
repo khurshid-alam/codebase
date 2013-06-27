@@ -1,5 +1,4 @@
 
-
 Ubuntu Packaging Guide
 ----------------------
 
@@ -212,10 +211,6 @@ The Debian package management tools:
 
 Update Software Sources For old releases:
 sudo sed -i -e 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
-
-
-
-
 
 
 
