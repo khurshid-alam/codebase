@@ -38,6 +38,7 @@ All you can do now is change the wallpaper, fonts, and theme like this
 
 
 https://bbs.archlinux.org/viewtopic.php?id=110874
+
 http://askubuntu.com/questions/64001/how-do-i-change-the-wallpaper-in-lightdm
 
 
