@@ -30,9 +30,8 @@ All you can do now is change the wallpaper, fonts, and theme like this
 
 **Cleanup:**
 
-exit #if its shows error prec Ctrl+C to kill jobs & then try exit
-
-    xhost -SI:localuser:gdm 
+	exit 		#if its shows error prec Ctrl+C to kill jobs & then try exit
+	xhost -SI:localuser:gdm 
     logout #exit from root user
 
     pkill gsksu
