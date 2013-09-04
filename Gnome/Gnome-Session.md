@@ -1,7 +1,7 @@
 Gnome-session
 -------------
 
-**Log-Out/Restart:**
+### Log-Out/Restart:
 
 **Logout:**
 
@@ -50,7 +50,7 @@ http://gnomeshell.wordpress.com/2011/08/28/manage-the-startup-applications/ [Man
 ----------
 
 
-**Run a Script On Boot:**
+### Run a Script On Boot:
 
 **Method1:**
 
@@ -193,7 +193,7 @@ Add the link to the Startup Applications application in Ubuntu if you want to us
 ----------
 
 
-***Run a script only at the very first boot:***
+### Run a script only at the very first boot:
 
 **example1:**
 
