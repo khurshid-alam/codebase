@@ -1,7 +1,7 @@
 Transmission-Shutdown-Script
 ========
 
-> Github Gist: https://gist.github.com/khurshid-alam/5994613
+> Github Gist: https://gist.github.com/khurshid-alam/6474227
 
 This is the transmission shutdown script I wrote for a [askubuntu question](http://askubuntu.com/questions/202537/transmission-shutdown-script-for-multiple-torrents) with the help of transmission RPC interface.  
 
@@ -155,4 +155,4 @@ done
 ```
 
 
-  [1]: https://gist.github.com/khurshid-alam/5994613
+  [1]: https://gist.github.com/khurshid-alam/6474227
