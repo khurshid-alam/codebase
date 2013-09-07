@@ -137,7 +137,7 @@ do
   else
 	  notify-send "Downloads Complete" "$trname"
 
-        # uncommnt to shutdown the computer
+        # uncomment to shutdown the computer
         #dbus-send --session --type=method_call --print-reply --dest=org.gnome.SessionManager /org/gnome/SessionManager org.gnome.SessionManager.RequestShutdown
 
         # uncomment to suspend (on ubuntu)
