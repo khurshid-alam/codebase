@@ -22,8 +22,7 @@ if [ -d .git ]; then
     xdg-open $clone_url
   else
     git update-index -q --refresh
-    git fetch origin
-    reslog=$(git log HEAD..origin/master --oneline)
+    git remote update
     if test -z "$(git status --porcelain)" && `git status -uno | grep -q 'nothing to commit'`; then
       notify-send "github Sync" "Everything is already synced" -i "/home/sunny/.icons/AwOkenDark/clear/24x24/apps/github.png"
     else  
