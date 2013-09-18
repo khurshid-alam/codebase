@@ -28,14 +28,14 @@ This is the transmission shutdown script I wrote for a [askubuntu question](http
 On Ubuntu
 
     sudo apt-get install libnotify-bin
-
+	sudo apt-get install transmission-cli
 
 
 
 
 On Ubuntu >= 13.04 (For twitter notification):
 
-    sudo apt-get install transmission-cli
+    
 	sudo add-apt-repository ppa:moorhen-core/moorhen-apps
 	sudo apt-get install twidge
 
