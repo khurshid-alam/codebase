@@ -1,0 +1,2 @@
+[29493:29493:0918/152910:ERROR:zygote_host_impl_linux.cc(146)] Running without the SUID sandbox! See https://code.google.com/p/chromium/wiki/LinuxSUIDSandboxDevelopment for more information on developing with the sandbox on.
+Created new window in existing browser session.
