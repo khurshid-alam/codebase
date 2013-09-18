@@ -24,7 +24,7 @@ if [ -d .git ]; then
     git update-index -q --refresh
     git fetch origin
     reslog=$(git log HEAD..origin/master --oneline)
-    if test -z "$(git status --porcelain)" && "${reslog}" = ""; then
+    if test -z "$(git status --porcelain)" && `git status -uno | grep -q 'nothing to commit'`; then
       notify-send "github Sync" "Everything is already synced" -i "/home/sunny/.icons/AwOkenDark/clear/24x24/apps/github.png"
     else  
       git add -A
