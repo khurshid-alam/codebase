@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gittext=`zenity --title "Git Commit" --entry --text "Enter your git commit message"`
+echo "$gittext"

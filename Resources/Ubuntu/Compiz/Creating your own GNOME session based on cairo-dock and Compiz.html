@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://getpocket.com/a/read/150900032 -->
+<html class="js history csstransitions localstorage wf-inactive wf-chaparralpro-i4-inactive wf-chaparralpro-i7-inactive wf-chaparralpro-n4-inactive wf-chaparralpro-n7-inactive wf-proximanova-i4-inactive wf-proximanova-i6-inactive wf-proximanova-n4-inactive wf-proximanova-n6-inactive"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Pocket : Creating your own GNOME session based on cairo-dock and Compiz</title>
+    <meta name="description" content="When you find something you want to view later, put it in Pocket.">
+    <meta name="keywords" content="pocket, read it later, save for later, read later, bookmark, bookmarks, iphone, app, offline, ipad, android, kindle, firefox, extension">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="http://getpocket.com/a/c/global.min.css?v=103">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://getpocket.com/i/apple-touch-icon/Pocket_AppIcon_57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://getpocket.com/i/apple-touch-icon/Pocket_AppIcon_72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://getpocket.com/i/apple-touch-icon/Pocket_AppIcon_114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://getpocket.com/i/apple-touch-icon/Pocket_AppIcon_144.png">
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/niloccemoadcdkdjlinkgdfekeahmflj">
+    <script src="./Creating your own GNOME session based on cairo-dock and Compiz_files/blp0sen.js" type="text/javascript" async=""></script><script src="./Creating your own GNOME session based on cairo-dock and Compiz_files/modernizr-2.6.2.min.js"></script>
+    <script>
+    Modernizr.load([
+    {
+        test: Modernizr.mq('only all'),
+        nope: '/a/j/vendor/respond.min.js'
+    },
+    {
+        test: window.JSON,
+        nope: '/a/j/vendor/json2.js'
+    },
+    {  
+        test: Modernizr.input.placeholder,
+        nope: '/a/j/vendor/jquery.placeholder.min.js'
+    }
+    ]);
+    </script>
+    <script type="text/javascript">
+      (function() {
+        var config = {
+          kitId: 'blp0sen',
+          scriptTimeout: 3000
+        };
+        var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+      })();
+    </script><style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}.tk-chaparral-pro{font-family:"chaparral-pro",sans-serif;}</style><link rel="stylesheet" href="http://use.typekit.net/c/7077d8/chaparral-pro:i4:i7:n4:n7,proxima-nova:i4:i6:n4:n6.XXw:N:1,XXn:N:1,XY8:N:1,XXk:N:1,W0W:N:1,Vn2:N:1,W0V:N:1,W0X:N:1/d?3bb2a6e53c9684ffdc9a9bff1d5b2a62ce701868d0308661d1fbefe22ed9bee7f85030646747f98f1fb5136b64d9f1dc48eb0264cdbd0e5f73d4c963a788c5025f863799c0717c765641cc1d8eda3d29fdc8f3c08504ab620a3c2bacb58232317b045e05b6ecc56a610767b3babd1bad164783486a1eb2679b96ba1c5f653ee3f4f70fe626dfc025695d5a3b26053d137139da0499ee868f17ce7c36fdde70dedbb3fa264aec25d9cbd3161e4b890b9e5d7a9fbce796cb3f48ee8192265b89aed276676079">
+<style type="text/css">.topic_1{background-color:rgb(239,64,86); background-color:rgba(239,64,86,0.9);} .topic_2{background-color:rgb(80,188,182); background-color:rgba(80,188,182,0.9);} .topic_13970496{background-color:rgb(240,174,66); background-color:rgba(240,174,66,0.9);} </style></head>
+
+<body class="page-reader page-readerlight page-app-en-us" style=""><div id="clickguard" class="clickguard" style="display: none;"></div>
+    
+    <div id="container">
+
+		<header id="PKT_header">
+	    	<div class="rainbowDash">
+				<div class="green"></div>
+				<div class="blue"></div>
+				<div class="red"></div>
+				<div class="orange"></div>
+			</div>
+		</header>
+
+        <div id="page">
+
+        	<noscript>
+        		&lt;p style="margin-top: 250px;margin-bottom:10px;"&gt;
+	        		Javascript is disabled in your browser. You are missing out.
+	        	&lt;/p&gt;
+	        	&lt;p style="margin-bottom: 250px;"&gt;
+	        		Enable javascript to use Pocket on the web.
+	        	&lt;/p&gt;
+        	</noscript>
+
+            <nav class="pkt-nav">
+            <div class="toolbar_queue navigationItem wrapper">
+    <ul class="icons leftItem">
+        <li id="pagenav_gridlist" class="pagenav_gridview">
+            <a class="hint-item" data-intro="Tile/List View Toggle" data-position="bottom" href="http://getpocket.com/a/queue/list/" title="Switch to List View">Tile View</a>
+        </li>
+        <li id="pagenav_segmentarticles" class="pagenav_content_all">
+            <a title="Viewing All Articles" data-intro="Content Filter" data-position="bottomlower" href="http://getpocket.com/a/read/150900032#">Viewing All Articles</a>
+        <div id="pagenav_segmentsfilter" class="dropSelector titleSelector" style="display: block;"><a class="all hint-item"><span>All Items</span></a><div class="popover-new popover-new-bottomright" style="top: 55px; left: -25px;"><div class="arrow"></div><ul><li class="all" val="all"><a href="http://getpocket.com/a/read/150900032#">All Items</a></li><li class="articles" val="articles"><a href="http://getpocket.com/a/read/150900032#">Articles</a></li><li class="videos" val="videos"><a href="http://getpocket.com/a/read/150900032#">Videos</a></li><li class="images last" val="images"><a href="http://getpocket.com/a/read/150900032#">Images</a></li></ul></div></div></li>
+        <li id="pagenav_addarticle">
+            <a class="hint-item" data-intro="Save a URL" data-position="bottom" href="http://getpocket.com/a/read/150900032#">Save a URL</a>
+        </li>
+    </ul>
+    <div class="wrapper_searchtag rightItem">
+        <div class="wrapper_tag" data-intro="Tag Filter" data-position="bottom">
+            <div class="tag_name"></div>
+            <a class="tag_clear" href="http://getpocket.com/a/queue/grid/" title="Clear Tag Selection">Clear Tag Selection</a>
+        <div id="pagenav_tagfilter" class="dropSelector titleItem titleSelector" style="display: block;"><a class="all hint-item"><span class="itemtext">All Items</span><span class="edittag"></span><span class="deletetag"></span></a><div class="popover-new popover-new-bottomleft" style="top: 45px; left: -221px;"><div class="arrow"></div><ul class="scroll_mode"><li val="all"><a href="http://getpocket.com/a/queue/grid/">All Items</a></li><li val="untagged"><a href="http://getpocket.com/a/queue/grid/_untagged_">Untagged Items</a></li><li val=""><a href="http://getpocket.com/a/queue/grid/"></a></li><li val="comicsforever"><a href="http://getpocket.com/a/queue/grid/comicsforever">comicsforever</a></li><li val="dropbox"><a href="http://getpocket.com/a/queue/grid/dropbox"><span class="itemtext">dropbox</span><span class="edittag"></span><span class="deletetag"></span></a></li><li val="feedly"><a href="http://getpocket.com/a/queue/grid/feedly"><span class="itemtext">feedly</span><span class="edittag"></span><span class="deletetag"></span></a></li><li val="flickr"><a href="http://getpocket.com/a/queue/grid/flickr">flickr</a></li><li val="googlereader"><a href="http://getpocket.com/a/queue/grid/googlereader"><span class="itemtext">googlereader</span><span class="edittag"></span><span class="deletetag"></span></a></li><li val="gtg"><a href="http://getpocket.com/a/queue/grid/gtg">gtg</a></li><li val="ifttt"><a href="http://getpocket.com/a/queue/grid/ifttt">ifttt</a></li><li val="infinity-comics"><a href="http://getpocket.com/a/queue/grid/infinity-comics"><span class="itemtext">infinity-comics</span><span class="edittag"></span><span class="deletetag"></span></a></li><li val="notes"><a href="http://getpocket.com/a/queue/grid/notes">notes</a></li><li val="os"><a href="http://getpocket.com/a/queue/grid/os">os</a></li><li val="php"><a href="http://getpocket.com/a/queue/grid/php"><span class="itemtext">php</span><span class="edittag"></span><span class="deletetag"></span></a></li><li val="read-later"><a href="http://getpocket.com/a/queue/grid/read-later">read-later</a></li><li val="reminder"><a href="http://getpocket.com/a/queue/grid/reminder">reminder</a></li><li val="stackexchange"><a href="http://getpocket.com/a/queue/grid/stackexchange">stackexchange</a></li><li val="tumblr-like"><a href="http://getpocket.com/a/queue/grid/tumblr-like">tumblr-like</a></li><li val="twitter"><a href="http://getpocket.com/a/queue/grid/twitter">twitter</a></li><li val="ubuntu"><a href="http://getpocket.com/a/queue/grid/ubuntu">ubuntu</a></li><li val="watch-later"><a href="http://getpocket.com/a/queue/grid/watch-later">watch-later</a></li><li val="youtube"><a href="http://getpocket.com/a/queue/grid/youtube">youtube</a></li></ul></div></div></div>
+        <div class="wrapper_search" data-intro="Search by title or URL" data-position="bottom">
+            <input id="page_search" type="text" placeholder="Search by title or URL" style="width: 150px;">
+            <a id="search_clear" title="Clear Search" style="display: none;">Clear Search</a>
+        </div>
+    </div>
+</div><div class="toolbar_reader navigationItem wrapper active">
+    <ul class="icons leftItem">
+        <li id="pagenav_back" class="simple"><a class="hint-item" data-intro="Go Back" data-position="bottom" href="http://getpocket.com/a/read/150900032#">Go Back</a></li>
+        <li id="pagenav_mark" class="simple"><a class="hint-item" data-intro="Archive" data-position="bottomlower" href="http://getpocket.com/a/read/150900032#" title="Archive">Archive</a></li>
+        <li id="pagenav_delete" class="simple"><a class="hint-item" data-intro="Delete" data-position="bottom" href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+        <li id="pagenav_favorite" class="simple"><a class="hint-item" title="Favorite" data-intro="Favorite" data-position="bottomlower" href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+    </ul>
+    <ul class="icons rightItem">
+        <li id="pagenav_share"><a class="hint-item" title="Share" data-intro="Share" data-position="bottom" href="http://getpocket.com/a/read/150900032#">Share</a></li>
+        <li id="pagenav_style"><a class="hint-item" data-intro="Text Options" data-position="bottom" href="http://getpocket.com/a/read/150900032#">Text Options</a></li>
+    </ul>
+</div></nav>
+            <div class="notifications-error clearfix">
+                <div class="content">
+                    <p class="message"></p>
+                </div>
+            </div>
+            <div class="notifications-sync clearfix notifications-synconlymode">
+                <div class="content clearfix">
+                    <div class="progress-bar">
+                        <div class="progress-bar-content progress-bar-zeroed"></div>
+                    </div>
+                    <p class="message">
+<span class="count count_solo">1</span> Item added
+</p>
+                </div>
+            </div>
+            <div class="container-bulkedit clearfix">
+                <div class="bulkedit-content clearfix">
+                    <div class="bulkedit-status"><p></p></div>
+                    <div class="bulkedit-actions"><ul>
+    <li class="bulkedit-archive"><a title="Archive" href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+    <li class="bulkedit-favorite"><a title="Favorite" href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+    <li class="bulkedit-delete"><a title="Delete" href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+    <li class="bulkedit-addtag"><a title="Add Tag" href="http://getpocket.com/a/read/150900032#">Add Tag</a></li>
+</ul></div>
+                    <a class="bulkedit-cancel" href="http://getpocket.com/a/read/150900032#"></a>
+                </div>
+            </div>
+            <div id="content">
+            <div id="page_queue" class="wrapper tag_sidebar_holder grid"><div id="queue_list_wrapper" class=""><ul id="queue" class="queue_list"><li class="item item_normal_excerpt adjusted" id="i27052846" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://ubuntuforums.org/showthread.php?t=1241830" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to SMS messages to a phone through Pidgin</span></span><span class="excerpt" style="height: 72px;">1. Pidgin - version 2.5.4 or higher 2. A Gmail account -- Gtalk as used as the IM Message &lt;-&gt; SMS text gateway 3. Google Talk SMS Plugin : http://snarfed.org/space/google_talk_sms+pidgin+plugin  Service only known to work within United States.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1241830" data-lazy-type="favicon" data-lazy-key="27052846" data-favicon-url="http://img.readitlater.com/i/ubuntuforums.org/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon.ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1241830" target="_blank" title="View Original">ubuntuforums.org</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal_excerpt adjusted" id="i71388630" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://ubuntuforums.org/showthread.php?t=1359397" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Python, PolicyKit and DBus: an example</span></span><span class="excerpt" style="height: 108px;">Before understanding PolicyKit, you need to understand DBus. There's a nice DBus tutorial for Python here, which sadly, is still unfinished after three years.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1359397" data-lazy-type="favicon" data-lazy-key="71388630" data-favicon-url="http://img.readitlater.com/i/ubuntuforums.org/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon.ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1359397" target="_blank" title="View Original">ubuntuforums.org</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal_excerpt adjusted" id="i486059521" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/486059521" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to make Firefox open magnet-links in Transmission</span></span><span class="excerpt" style="height: 72px;">Situation: You hate the default app that opens when you double click a file or when you open it with chromium browser and you want to change it.  You can also right-click on a file &gt; select Properties &gt; Open with. See what applications/programs are listed there.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F122930" data-lazy-type="favicon" data-lazy-key="486059521" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F122930" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal_excerpt adjusted" id="i150900032" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="./Creating your own GNOME session based on cairo-dock and Compiz_files/Creating your own GNOME session based on cairo-dock and Compiz.html" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Creating your own GNOME session based on cairo-dock and Compiz</span></span><span class="excerpt" style="height: 72px;">Personally I absolutely do not like the gnome-shell in GNOME 3. I actually even hate it: it is slow, messy and cumbersome to use and I have the feeling that developers are not listening to criticism.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fartipc10.vub.ac.be%2Fwordpress%2F2012%2F03%2F04%2Fcreating-your-own-gnome-session-based-on-cairo-dock-and-compiz%2F" data-lazy-type="favicon" data-lazy-key="150900032" data-favicon-url="http://img.readitlater.com/i/artipc10.vub.ac.be/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(2).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fartipc10.vub.ac.be%2Fwordpress%2F2012%2F03%2F04%2Fcreating-your-own-gnome-session-based-on-cairo-dock-and-compiz%2F" target="_blank" title="View Original">artipc10.vub.ac.be</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal_excerpt adjusted" id="i485334139" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/485334139" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How can I logout from the GUI using CLI?</span></span><span class="excerpt" style="height: 108px;">I chose an Openbox DE at the time of login and the system took ages to load the DE. So I switched to CLI (Ctrl+Alt+F1) and rebooted my system (but I wanted to logout from the GUI and not restart the whole system).</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F180628" data-lazy-type="favicon" data-lazy-key="485334139" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F180628" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal_excerpt adjusted" id="i485177334" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/485177334" target="_blank">
+		<span class="inner">
+			<span class="title"><span>pull/push from multiple remote locations</span></span><span class="excerpt" style="height: 108px;">Short: is there a way to have a git repo push to and pull from a list of remote repos (rather than a single "origin")?</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F849308" data-lazy-type="favicon" data-lazy-key="485177334" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F849308" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal adjusted" id="i480692047" tiletype="normal" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/480692047" target="_blank">
+		<span class="inner">
+			<span class="title"><span>10 Lesser Known Commands for Linux – Part 3</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="480692047" data-thumburl="http://www.tecmint.com/wp-content/uploads/2013/11/10-Lesser-Known-Linux-Commands.png" data-thumbvariant="2" data-tileclass="normal" data-shouldcache="true" style="height: 155px; background-image: url(http://www.tecmint.com/wp-content/uploads/2013/11/10-Lesser-Known-Linux-Commands.png);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.tecmint.com%2F10-lesser-known-commands-for-linux-part-3%2F" data-lazy-type="favicon" data-lazy-key="480692047" data-favicon-url="http://img.readitlater.com/i/tecmint.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(4).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.tecmint.com%2F10-lesser-known-commands-for-linux-part-3%2F" target="_blank" title="View Original">tecmint.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal_excerpt adjusted" id="i432692556" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/63681" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How can I make xrandr customization permanent?</span></span><span class="excerpt" style="height: 72px;">I used to edit the startup script for the GDM (/etc/gdm/Init/Default) for to change permanently my display resolution . But how can I do this with the LigthDM in Ubuntu Oneiric? Thanks.  If you don't have a xorg.conf, then you can use the following as a basis.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F63681" data-lazy-type="favicon" data-lazy-key="432692556" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F63681" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal_excerpt adjusted" id="i439243621" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/439243621" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to refresh token with Google API client?</span></span><span class="excerpt" style="height: 108px;">I've been playing around with the Google Analytics API (V3) and have run into som errors. Firstly, everything is set up correct and worked with my testing account. But when I want to grab data from another profile ID (Same Google Accont/GA Account) I get an 403 Error.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F9241213" data-lazy-type="favicon" data-lazy-key="439243621" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F9241213" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i479649435" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/10547" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to clean launch a GUI app via the Terminal (so it doesn't wait for termination)?</span></span><span class="excerpt" style="height: 72px;">Some GUI apps launch cleanly via the Terminal command line.  Some don't, and they cause the Terminal to wait for the app to terminate. ...and even then, some don't "release" the command line.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F10547" data-lazy-type="favicon" data-lazy-key="479649435" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F10547" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+<ul class="buttons">
+	<li class="action_share" title="Share"><a href="http://getpocket.com/a/read/150900032#">Share</a></li>
+	<li class="action_mark " title="Archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li>
+	<li class="action_delete" title="Delete"><a href="http://getpocket.com/a/read/150900032#">Delete</a></li>
+	<li class="action_favorite " title="Favorite"><a href="http://getpocket.com/a/read/150900032#">Favorite</a></li>
+</ul></li><li class="item item_normal adjusted" id="i394056714" tiletype="normal" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/394056714" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Genymotion: Fast, Easy To Use Android (x86) Emulator With OpenGL Hardware Acceleration Support</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="394056714" data-thumburl="http://2.bp.blogspot.com/-aEpKnl0dvu8/UdwRhIUd-3I/AAAAAAAAAGo/Vl-Xfcl_TsA/s1600/genymotion.png" data-thumbvariant="2" data-tileclass="normal" data-shouldcache="true" style="height: 133px; background-image: url(http://2.bp.blogspot.com/-aEpKnl0dvu8/UdwRhIUd-3I/AAAAAAAAAGo/Vl-Xfcl_TsA/s1600/genymotion.png);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.webupd8.org%2F2013%2F07%2Fgenymotion-fast-easy-to-use-android-x86.html" data-lazy-type="favicon" data-lazy-key="394056714" data-favicon-url="http://img.readitlater.com/i/webupd8.org/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(5).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.webupd8.org%2F2013%2F07%2Fgenymotion-fast-easy-to-use-android-x86.html" target="_blank" title="View Original">webupd8.org</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i449289149" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/16305" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How can I make usual phone calls using a connected mobile phone?</span></span><span class="excerpt" style="height: 72px;">Your Answer      draft saved draft discarded        Sign up or login  Sign up using Google   Sign up using Facebook   Sign up using Stack Exchange    Post as a guest</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F16305" data-lazy-type="favicon" data-lazy-key="449289149" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F16305" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal adjusted" id="i470361936" tiletype="normal" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/470361936" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Save, Access And Quickly Paste Text Snippets With This Nifty Unity Launcher Tool</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="470361936" data-thumburl="http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/Screen-Shot-2013-10-31-at-13.04.jpg" data-thumbvariant="2" data-tileclass="normal" data-shouldcache="true" style="height: 134px; background-image: url(http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/Screen-Shot-2013-10-31-at-13.04.jpg);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.omgubuntu.co.uk%2F2013%2F10%2Funity-launcher-clipboard-snippets-item" data-lazy-type="favicon" data-lazy-key="470361936" data-favicon-url="http://img.readitlater.com/i/omgubuntu.co.uk/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(6).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.omgubuntu.co.uk%2F2013%2F10%2Funity-launcher-clipboard-snippets-item" target="_blank" title="View Original">omgubuntu.co.uk</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i476361595" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/48535" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to customize the Ubuntu Live CD?</span></span><span class="excerpt" style="height: 108px;">I would like to customize Ubuntu live CD by installing some additional packages. I have followed this link but it doesn't seems to work. Can anyone provide clear instructions? Thanks in advance!  I have customized ubuntu 10.10 with firefox shortcuts and few folders on desktops.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F48535" data-lazy-type="favicon" data-lazy-key="476361595" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F48535" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i449794083" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/449794083" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Tumblr V2 API PHP wrapper</span></span><span class="excerpt" style="height: 108px;">I am trying to integrate a Tumblr blog into my website, using the TumblrPHP wrapper available at https://github.com/gregavola/tumblrPHP. This is code I'm using to view the posts on my site:  &lt;?php include ('lib/tumblrPHP.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F12932640" data-lazy-type="favicon" data-lazy-key="449794083" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F12932640" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_wide_image adjusted" id="i474279477" tiletype="wide_image" ts="2">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/474279477" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Emulate Android on Your PC With Genymotion</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="474279477" data-thumburl="http://cdn.appstorm.net/android.appstorm.net/android/files/2013/10/genymotion_1.png" data-thumbvariant="2" data-tileclass="wide_image" data-shouldcache="true" style="height: 176px; background-image: url(http://cdn.appstorm.net/android.appstorm.net/android/files/2013/10/genymotion_1.png);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fandroid.appstorm.net%2Fhow-to%2Frooting-and-roms%2Femulate-android-on-your-pc-with-genymotion%2F" data-lazy-type="favicon" data-lazy-key="474279477" data-favicon-url="http://img.readitlater.com/i/android.appstorm.net/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(7).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fandroid.appstorm.net%2Fhow-to%2Frooting-and-roms%2Femulate-android-on-your-pc-with-genymotion%2F" target="_blank" title="View Original">android.appstorm.net</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal adjusted" id="i473676030" tiletype="normal" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/473676030" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Avant Window Navigator Gets New Maintainer, Ubuntu 13.10 PPA</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="473676030" data-thumburl="http://dl.dropboxusercontent.com/u/1113424/img/avant-window-navigator.png" data-thumbvariant="2" data-tileclass="normal" data-shouldcache="true" style="height: 134px; background-image: url(http://dl.dropboxusercontent.com/u/1113424/img/avant-window-navigator.png);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.webupd8.org%2F2013%2F11%2Favant-window-navigator-gets-new.html" data-lazy-type="favicon" data-lazy-key="473676030" data-favicon-url="http://img.readitlater.com/i/webupd8.org/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(5).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.webupd8.org%2F2013%2F11%2Favant-window-navigator-gets-new.html" target="_blank" title="View Original">webupd8.org</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i474581099" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/28039" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to stream music over the network to multiple computers?</span></span><span class="excerpt" style="height: 72px;">I want to be able to walk from one room to another and hear the same song playing. Like you do if you were listening to the radio in all rooms.  Yes, with pulseaudio this can easily be done. You will need to install and run paprefs  that makes your sound devices available over the network.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F28039" data-lazy-type="favicon" data-lazy-key="474581099" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F28039" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_wide_image adjusted" id="i329497361" tiletype="wide_image" ts="2">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/329497361" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to Set Up Your Own Private Cloud Storage Service in Five Minutes with OwnCloud</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="329497361" data-thumburl="http://img.gawkerassets.com/img/18jlbrqx00a8qjpg/ku-xlarge.jpg" data-thumbvariant="2" data-tileclass="wide_image" data-shouldcache="true" style="height: 155px; background-image: url(http://img.gawkerassets.com/img/18jlbrqx00a8qjpg/ku-xlarge.jpg);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Flifehacker.com%2F5993596%2Fhow-to-set-up-your-own-private-cloud-storage-service-in-five-minutes-with-owncloud" data-lazy-type="favicon" data-lazy-key="329497361" data-favicon-url="http://img.readitlater.com/i/lifehacker.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(8).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Flifehacker.com%2F5993596%2Fhow-to-set-up-your-own-private-cloud-storage-service-in-five-minutes-with-owncloud" target="_blank" title="View Original">lifehacker.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i439243631" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/439243631" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How do I keep a new line character in an IFTTT recipe</span></span><span class="excerpt" style="height: 72px;">The &lt;br&gt; after the {{FlickrUrl}} is not being parsed. I end up with 'br' on the end of the photo URL and the link doesn't work.  Any help would be appreciated.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwebapps.stackexchange.com%2Fquestions%2F44775" data-lazy-type="favicon" data-lazy-key="439243631" data-favicon-url="http://img.readitlater.com/i/webapps.stackexchange.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(9).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwebapps.stackexchange.com%2Fquestions%2F44775" target="_blank" title="View Original">webapps.stackexchange.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i406233677" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://stackoverflow.com/questions/8588768" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Git push : username , password, how to avoid</span></span><span class="excerpt" style="height: 108px;">Your Answer      draft saved draft discarded        Sign up or log in  Sign up using Google   Sign up using Facebook   Sign up using Stack Exchange    Post as a guest</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F8588768" data-lazy-type="favicon" data-lazy-key="406233677" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F8588768" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i406233679" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://stackoverflow.com/questions/492558" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Removing multiple files from a Git repo that have already been deleted from disk</span></span><span class="excerpt" style="height: 72px;">Ideally, I'm looking for something that works in the same way that git add . does, if that's possible.  this is similar to git add -u, but also adds new files. This is roughly the equivalent of hg's addremove command (although the move detection is automatic).</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F492558" data-lazy-type="favicon" data-lazy-key="406233679" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F492558" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i439243625" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/439243625" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to get all the comments from Disqus?</span></span><span class="excerpt" style="height: 108px;">THIS IS NOT AN ANSWER!  This should indicate my identification through API worked but how do I fix the error? Could be that $comments is not an array in my case?</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F15080258" data-lazy-type="favicon" data-lazy-key="439243625" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F15080258" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i406233666" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://stackoverflow.com/questions/4749330" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to test if string exists in file with Bash shell?</span></span><span class="excerpt" style="height: 72px;">Your Answer      draft saved draft discarded        Sign up or log in  Sign up using Google   Sign up using Facebook   Sign up using Stack Exchange    Post as a guest</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F4749330" data-lazy-type="favicon" data-lazy-key="406233666" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F4749330" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_video adjusted" id="i472727865" tiletype="normal_video" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/472727865" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Yeh Haseen Waadiyaan - Roja (1080p HD Song)</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="472727865" data-thumburl="http://img.youtube.com/vi/TFT_YSY5HTU/0.jpg" data-thumbvariant="2" data-tileclass="normal_video" data-shouldcache="true" style="height: 155px; background-image: url(http://getpocket.com/a/i/play@1x.png), url(http://img.youtube.com/vi/TFT_YSY5HTU/0.jpg);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DTFT_YSY5HTU" data-lazy-type="favicon" data-lazy-key="472727865" data-favicon-url="http://img.readitlater.com/i/youtube.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(10).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DTFT_YSY5HTU" target="_blank" title="View Original">youtube.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i472087400" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/4428" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to create a screencast?</span></span><span class="excerpt" style="height: 108px;">How can I create a screencast on Ubuntu? What applications are available?  Adds an easy to use graphical icon on the GNOME toolbar to make a pleasure use and configure the audio and video capture and screencast application recordMyDesktop.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F4428" data-lazy-type="favicon" data-lazy-key="472087400" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F4428" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i470276882" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/30334" target="_blank">
+		<span class="inner">
+			<span class="title"><span>What Application Indicators are available?</span></span><span class="excerpt" style="height: 108px;">This question is present as a matter of historical interest. While you are encouraged to help maintain its answers, please understand that "big list" questions are not generally allowed on Ask Ubuntu and will be closed per the FAQ.  I installed Ubuntu 11.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F30334" data-lazy-type="favicon" data-lazy-key="470276882" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F30334" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i469403657" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/469403657" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to change pulseaudio sink with “pacmd set-default-sink” during playback?</span></span><span class="excerpt" style="height: 72px;">PulseAudio pacmd is not capable of switching the default sinks while there is an actively playing stream to the sink input. However there is a way to still achieve this.  First we need to determine the index number of the sinks we want to switch. This can be done by calling:</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F71863" data-lazy-type="favicon" data-lazy-key="469403657" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F71863" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i469377065" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/469377065" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to enable/disable mobile broadband from terminal?</span></span><span class="excerpt" style="height: 72px;">Note: Replace the &lt;Your Mobile Broadband Connection Name Here&gt; with the name of your connection.  Reboot to complete installation and auto connect.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F137815" data-lazy-type="favicon" data-lazy-key="469377065" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F137815" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i469124848" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/469124848" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How can I add a new user as sudoer using the command line?</span></span><span class="excerpt" style="height: 72px;">As long as you have access to a user that is in the same groups as your "original" user, you can delete the old one.  Realistically, there are also other groups your new user should be a member of.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F7477" data-lazy-type="favicon" data-lazy-key="469124848" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F7477" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="loading loadingRow" style="display: none;">&nbsp;</li><li class="item item_normal adjusted" id="i467801957" tiletype="normal" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/467801957" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Livescribe 3 smartpen digitizes notes straight to your iPad, starts at $150</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="467801957" data-thumburl="http://www.blogcdn.com/www.engadget.com/media/2013/10/scribe.jpg" data-thumbvariant="2" data-tileclass="normal" data-shouldcache="true" style="height: 134px; background-image: url(http://www.blogcdn.com/www.engadget.com/media/2013/10/scribe.jpg);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.engadget.com%2F2013%2F10%2F28%2Flivescribe-3%2F" data-lazy-type="favicon" data-lazy-key="467801957" data-favicon-url="http://img.readitlater.com/i/engadget.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(11).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.engadget.com%2F2013%2F10%2F28%2Flivescribe-3%2F" target="_blank" title="View Original">engadget.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i424762864" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/424762864" target="_blank">
+		<span class="inner">
+			<span class="title"><span>get RSS feed into php array - possible?</span></span><span class="excerpt" style="height: 108px;">I want to parse an existing RSS feed from another website with php and then store certain parts of it in a mysql database.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F2454979" data-lazy-type="favicon" data-lazy-key="424762864" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F2454979" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i423820273" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/423820273" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to extract data from Tumblr API (JSON)?</span></span><span class="excerpt" style="height: 108px;">results is now the object you can use to reference the JSON structure. When you console.log the results object, it should appear in the Javascript developer console where you can explore the object tree.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F14514522" data-lazy-type="favicon" data-lazy-key="423820273" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F14514522" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i423103225" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://stackoverflow.com/questions/4939698" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Can a Webbased app have push notification?</span></span><span class="excerpt" style="height: 108px;">Im working on a webapp of my youtube channel and i wanna know if is possible to add push notifications for when there is a new video uploaded for example. thanks</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F4939698" data-lazy-type="favicon" data-lazy-key="423103225" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F4939698" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i406233630" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://english.stackexchange.com/questions/54502" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Is there a word for someone with the same name?</span></span><span class="excerpt" style="height: 72px;">If a person shares my name, in Dutch there is the word "naamgenoot", meaning roughly 'member of the same name'.  John A: Hi, my name is "John"John B: O, then we're insert solution word here!</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fenglish.stackexchange.com%2Fquestions%2F54502" data-lazy-type="favicon" data-lazy-key="406233630" data-favicon-url="http://img.readitlater.com/i/english.stackexchange.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(12).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fenglish.stackexchange.com%2Fquestions%2F54502" target="_blank" title="View Original">english.stackexchange.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i468661862" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://superuser.com/questions/203606" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Where can I get Chromium binaries?</span></span><span class="excerpt" style="height: 108px;">Are there any official pre-built binaries?  Since the link to the snapshots seems to change more often then I can keep track off I recommend using this link Chromium AppSpot Download to download the latest binaries for each OS. It detects your OS and then offers the latest build automagically.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fsuperuser.com%2Fquestions%2F203606" data-lazy-type="favicon" data-lazy-key="468661862" data-favicon-url="http://img.readitlater.com/i/superuser.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(13).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fsuperuser.com%2Fquestions%2F203606" target="_blank" title="View Original">superuser.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i407067013" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/407067013" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Preserving quotes in bash function parameters</span></span><span class="excerpt" style="height: 72px;">What I'd like to do is take, as an input to a function, a line that may include quotes (single or double) and echo that line exactly as it was provided to the function. For instance:</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F3260920" data-lazy-type="favicon" data-lazy-key="407067013" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F3260920" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i406609330" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/406609330" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to type special characters in Linux?</span></span><span class="excerpt" style="height: 108px;">X uses something called the compose key. By pressing Compose, some key, some key… in sequence, you can input characters. I have my compose key set to Menu; to type a © (copyright symbol), I would use Menu, o, c.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fsuperuser.com%2Fquestions%2F59418" data-lazy-type="favicon" data-lazy-key="406609330" data-favicon-url="http://img.readitlater.com/i/superuser.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(13).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fsuperuser.com%2Fquestions%2F59418" target="_blank" title="View Original">superuser.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i419844819" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/419844819" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Using Disqus, how can I get a list of recent comments from posts, and have them link back to the original post?</span></span><span class="excerpt" style="height: 72px;">Disqus folks told us we'd need to make a custom script for this, but it turns out that you can find a widget all ready to go under /admin/tools/widgets/ then choose recent comments.  Haven't gotten into modifying it yet, but you can get the most recent comments there.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F10838100" data-lazy-type="favicon" data-lazy-key="419844819" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F10838100" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i468661844" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://superuser.com/questions/8077" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How do I set up SSH so I don't have to type my password?</span></span><span class="excerpt" style="height: 72px;">How do I set up SSH so I don't have to type my password when connecting to a host?  If you happen to use GNOME, the seahorse application ("Passwords and Encryption Keys") can do it for you: File -&gt; New -&gt; Secure Shell Key.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fsuperuser.com%2Fquestions%2F8077" data-lazy-type="favicon" data-lazy-key="468661844" data-favicon-url="http://img.readitlater.com/i/superuser.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(13).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fsuperuser.com%2Fquestions%2F8077" target="_blank" title="View Original">superuser.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i468661835" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/468661835" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Any alternatives for Twitter RSS after native service is shut down?</span></span><span class="excerpt" style="height: 72px;">RSS feeds were retired a few weeks back with v1 of Twitter's API. I think Twitter postponed the retirement because they knew a lot of apps were going to stop working (ones that relied on Twitter RSS feeds)  The problem is that to generate RSS feeds with v1.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwebapps.stackexchange.com%2Fquestions%2F41499" data-lazy-type="favicon" data-lazy-key="468661835" data-favicon-url="http://img.readitlater.com/i/webapps.stackexchange.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(9).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwebapps.stackexchange.com%2Fquestions%2F41499" target="_blank" title="View Original">webapps.stackexchange.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i468661827" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/468661827" target="_blank">
+		<span class="inner">
+			<span class="title"><span>using imgur api v3 to upload images anonymously using php</span></span><span class="excerpt" style="height: 72px;">Sending the client_id in a post variable is the problem. It needs to be sent in the request header. Also, you're requesting a JSON response, but trying to parse it as XML.  Live functional example with and source based on this code with debug output.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F17269448" data-lazy-type="favicon" data-lazy-key="468661827" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F17269448" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i468661822" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/468661822" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Tethering an Toshiba AT100 to a Nokia E71</span></span><span class="excerpt" style="height: 108px;">I want to tether an Toshiba AT100 tablet to my Nokia E71. Have installed JuikoSpot on the Nokia which creates an ad-hoc hotspot. It appears the AT100 only looks for infrastructure hotspots. Is there an app or other method of getting the AT100 to look for and connect to an ad-hoc hotspot?</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fandroid.stackexchange.com%2Fquestions%2F24139" data-lazy-type="favicon" data-lazy-key="468661822" data-favicon-url="http://img.readitlater.com/i/android.stackexchange.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(14).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fandroid.stackexchange.com%2Fquestions%2F24139" target="_blank" title="View Original">android.stackexchange.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i439243634" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://stackoverflow.com/questions/138313" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to extract img src, title and alt from html using php?</span></span><span class="excerpt" style="height: 72px;">Using regexp to solve this kind of problem is a bad idea and will likely lead in unmaintainable and unreliable code. Better us an HTML parser.  Regexps are CPU intensive so you may wan to cache this page.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F138313" data-lazy-type="favicon" data-lazy-key="439243634" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F138313" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i468661808" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/468661808" target="_blank">
+		<span class="inner">
+			<span class="title"><span>is it possible to send the remote connector ip via netcat?</span></span><span class="excerpt" style="height: 72px;">Actually I want to make something like ifconfig.me functionality but only for my internal network. I see it the way smth on server listens some port and send ip of connected remote machine.  Seems nc is a great utility for my issue (also I haven't any php/python/whatever on server.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Funix.stackexchange.com%2Fquestions%2F34743" data-lazy-type="favicon" data-lazy-key="468661808" data-favicon-url="http://img.readitlater.com/i/unix.stackexchange.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(15).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Funix.stackexchange.com%2Fquestions%2F34743" target="_blank" title="View Original">unix.stackexchange.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal adjusted" id="i467969711" tiletype="normal" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/467969711" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How can I prevent programs from switching workspaces?</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="467969711" data-thumburl="http://i.stack.imgur.com/iZmmz.png" data-thumbvariant="2" data-tileclass="normal" data-shouldcache="true" style="height: 155px; background-image: url(http://i.stack.imgur.com/iZmmz.png);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F348913" data-lazy-type="favicon" data-lazy-key="467969711" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F348913" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i467144077" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/87667" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Getting MTP to work with a Galaxy Nexus?</span></span><span class="excerpt" style="height: 108px;">Added rule for device in /etc/udev/rules.d/51-android.rules. The rule is the following and works for adb:  Restarted udev (and computer just to make sure).</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F87667" data-lazy-type="favicon" data-lazy-key="467144077" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F87667" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_withtopic item_wide_image adjusted" id="i459340745" tiletype="wide_image" ts="2">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/459340745" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Awesome Things You Can Do With Google Scripts</span></span><a class="topic_detail topic_1" href="http://getpocket.com/a/read/150900032#" style="top: 47px;">Best Of</a>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="459340745" data-thumburl="http://img.labnol.org/di/google-apps-script.jpg" data-thumbvariant="2" data-tileclass="wide_image" data-shouldcache="true" style="height: 176px; background-image: url(http://img.labnol.org/di/google-apps-script.jpg);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.labnol.org%2Finternet%2Fgoogle-scripts%2F28281%2F" data-lazy-type="favicon" data-lazy-key="459340745" data-favicon-url="http://img.readitlater.com/i/labnol.org/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(16).ico">
+			
+			<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.labnol.org%2Finternet%2Fgoogle-scripts%2F28281%2F" target="_blank" title="View Original">labnol.org</a></li>
+</ul><div class="clear"></div></span></a>
+			
+		
+	
+</li><li class="item item_normal_excerpt adjusted" id="i406233671" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://stackoverflow.com/questions/1402776" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How do I commit all deleted files in Git? [duplicate]</span></span><span class="excerpt" style="height: 72px;">Is there a way to do a single command "just delete these files from the repository"? Similar to git add . which would add all new and modified files to the stage.  This question has been asked before and already has an answer.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F1402776" data-lazy-type="favicon" data-lazy-key="406233671" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F1402776" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i462364789" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://stackoverflow.com/questions/4360182" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Call PHP function from url?</span></span><span class="excerpt" style="height: 108px;">But if i want to execute a specific function inside myscript.php, is there a way? something like www.something.com/myscript.php.specificFunction  But please, for the love of all kittens, don't abuse this.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F4360182" data-lazy-type="favicon" data-lazy-key="462364789" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F4360182" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i425106591" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/425106591" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How do I install third-party rhythmbox plugins?</span></span><span class="excerpt" style="height: 72px;">Now that the dust has settled and Rhythmbox has become (again) the default music-media player in 12.04 &amp; 12.10, I'm interested in extending its functionality.  For example, the default lyric plugin does not work for me and there doesn't appear to be an sound-equalizer by default.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F147942" data-lazy-type="favicon" data-lazy-key="425106591" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F147942" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i460841607" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/70599" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to change tooltip background color in Unity?</span></span><span class="excerpt" style="height: 72px;">In a lot of applications the tooltips are just plain ugly (White text on black background, way too much contrast) or even unreadable (black or dark blue text (Hyperlinks) on black background).</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F70599" data-lazy-type="favicon" data-lazy-key="460841607" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F70599" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i425451659" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/425451659" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to uppercase first letter of the first word in each sentence using shell script?</span></span><span class="excerpt" style="height: 72px;">How about using bash's builtin 'read' function with the period character as delimiter to read each whole sentence into a variable, and then capitalizing the initial character of the variable? Something like  To handle multiple sentence terminators e.g.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F334544" data-lazy-type="favicon" data-lazy-key="425451659" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F334544" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i418175392" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/418175392" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Can I use my computer as an A2DP receiver?</span></span><span class="excerpt" style="height: 108px;">To use your Ubuntu machine as an a2dp Bluetooth device, you must first configure it to register as an "a2dp sink" endpoint.  The bluez package in Ubuntu (10.04 and above) includes a utility called sdptool that can be used to check whether a Bluetooth device is configured as an a2dp sink or not.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F2573" data-lazy-type="favicon" data-lazy-key="418175392" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F2573" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i417947591" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/417947591" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to configure pkexec</span></span><span class="excerpt" style="height: 126px;">For the first question I found two possible ways.  For the second question I can say that you can't use something similar as how you use for sudo/gksu to tell to pkexec to not ask for a password after the first time applying it to a command.</span>
+			<span class="thumb" variant="0" style="height: 171px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F287845" data-lazy-type="favicon" data-lazy-key="417947591" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F287845" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i459353519" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://askubuntu.com/questions/3841" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Desktop doesn't remember brightness settings after a reboot</span></span><span class="excerpt" style="height: 72px;">Every time I reboot my machine the brightness goes back to 100% in Gnome. I wish it would keep the last setting. Is there anyway?  This is supposed to be configurable in the energy options, set the brightness to the desired level and it will always be used.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F3841" data-lazy-type="favicon" data-lazy-key="459353519" data-favicon-url="http://img.readitlater.com/i/askubuntu.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(1).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Faskubuntu.com%2Fquestions%2F3841" target="_blank" title="View Original">askubuntu.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i458428359" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_webview" href="http://stackoverflow.com/questions/981954" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How can one check to see if a remote file exists using PHP?</span></span><span class="excerpt" style="height: 72px;">The best I could find, an if fclose fopen type thing, makes the page load really slowly.  Basically what I'm trying to do is the following: I have a list of websites, and I want to display their favicons next to them.</span>
+			<span class="thumb" variant="0" style="height: 119px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F981954" data-lazy-type="favicon" data-lazy-key="458428359" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F981954" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i458201200" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/458201200" target="_blank">
+		<span class="inner">
+			<span class="title"><span>How to create a GitHub Gist with API?</span></span><span class="excerpt" style="height: 108px;">By looking at GitHub Gist API, I understood that it is possible to create the Gist create for anonymous users without any API keys/authentication. Is it so?  Thanks for any information about this.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F18667303" data-lazy-type="favicon" data-lazy-key="458201200" data-favicon-url="http://img.readitlater.com/i/stackoverflow.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(3).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F18667303" target="_blank" title="View Original">stackoverflow.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal adjusted" id="i423170357" tiletype="normal" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/423170357" target="_blank">
+		<span class="inner">
+			<span class="title"><span>WordPress Development from Dropbox with MAMP, Git and Git-FTP (on Mac) | Fr</span></span>
+			<span class="thumb lazy-active" variant="2" data-lazy-type="thumbnail" data-lazy-key="423170357" data-thumburl="http://www.semblance.co.za/toets2/wp-content/uploads/2013/04/icons1.png" data-thumbvariant="2" data-tileclass="normal" data-shouldcache="true" style="height: 134px; background-image: url(http://www.semblance.co.za/toets2/wp-content/uploads/2013/04/icons1.png);"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.semblance.co.uk%2F2013%2F04%2Fwordpress-development-from-dropbox-with-mamp-git-and-git-ftp-on-mac%2F" data-lazy-type="favicon" data-lazy-key="423170357" data-favicon-url="http://img.readitlater.com/i/semblance.co.uk/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(17).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Fwww.semblance.co.uk%2F2013%2F04%2Fwordpress-development-from-dropbox-with-mamp-git-and-git-ftp-on-mac%2F" target="_blank" title="View Original">semblance.co.uk</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="item item_normal_excerpt adjusted" id="i44253649" tiletype="normal_excerpt" ts="1">
+
+	<a class="link start_articleview" href="http://getpocket.com/a/read/44253649" target="_blank">
+		<span class="inner">
+			<span class="title"><span>Using Dropbox as a Git repository</span></span><span class="excerpt" style="height: 108px;">So last month I wrote a bit about setting up your own personal Git repositories on a Linux box, and how to use that for sharing code.</span>
+			<span class="thumb" variant="0" style="height: 145px;"></span>
+			<img class="favicon lazy-active" data-originalurl="http://getpocket.com/redirect?url=http%3A%2F%2Ftumblr.intranation.com%2Fpost%2F766290743%2Fusing-dropbox-git-repository" data-lazy-type="favicon" data-lazy-key="44253649" data-favicon-url="http://img.readitlater.com/i/tumblr.intranation.com/favicon.ico?f=fi" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(18).ico">
+			
+		<ul class="sub clearfix">
+	<li><a class="original_url" href="http://getpocket.com/redirect?url=http%3A%2F%2Ftumblr.intranation.com%2Fpost%2F766290743%2Fusing-dropbox-git-repository" target="_blank" title="View Original">tumblr.intranation.com</a></li>
+</ul><div class="clear"></div></span>
+	</a>
+</li><li class="info-loading" style="display: list-item;"></li></ul></div><div class="clear"></div></div><div id="page_reader" class="wrapper articleview font-serif fontsize-2 fontserifsize-2 active content-article">
+      
+<div class="reader_content_wrapper" style="display: block;">
+            <div class="reader_content"><div class="reader_head">
+	<h1>Creating your own GNOME session based on cairo-dock and Compiz</h1>
+	<ul class="sub">
+		<li class="authorsdomain"><span class="authors" style="display: inline;">By <span class="author">Frederik</span>, </span><span class="domain"><img class="favicon" src="./Creating your own GNOME session based on cairo-dock and Compiz_files/favicon(2).ico"><a target="_blank" href="http://getpocket.com/redirect?url=http%3A%2F%2Fartipc10.vub.ac.be%2Fwordpress%2F2012%2F03%2F04%2Fcreating-your-own-gnome-session-based-on-cairo-dock-and-compiz%2F">artipc10.vub.ac.be</a></span></li>
+		<li class="original"><a target="_blank" href="http://getpocket.com/redirect?url=http%3A%2F%2Fartipc10.vub.ac.be%2Fwordpress%2F2012%2F03%2F04%2Fcreating-your-own-gnome-session-based-on-cairo-dock-and-compiz%2F">View Original</a></li>
+		<li class="date" style="">March 4th, 2012</li>
+		<li class="tags"></li>
+	</ul>
+	<div class="clear"></div>
+</div>
+<div class="text_body">
+<p nodeindex="25" scoreaddedtoparent="36">Personally I absolutely do not like the gnome-shell in GNOME 3. I actually even hate it: it is slow, messy and cumbersome to use and I have the feeling that developers are not listening to criticism. Obvious and trivial design bugs which are well known, are totally ignored (<a href="https://bugzilla.gnome.org/show_bug.cgi?id=662738" nodeindex="131">bug 662738</a> is an example).</p>
+<p nodeindex="26" scoreaddedtoparent="44">For that reason, I went looking for an alternative desktop. KDE is way too bloated for a netbook with 1 GB of RAM, while XFCE is not as polished as a traditional GNOME 2.32 desktop. The best alternative I could find out right now, was to just replace the GNOME Shell by a custom panel or dock implementation. In the end I chose cairo-dock: it is written in C, so it is probably not as memory hungry as AWN (which uses Python) and Docky (which uses Mono, which I also consider as a possible patent minefield). Cairo-dock is also actively maintained. I paired cairo-dock with the compiz window manager to get some nicely looking desktop.<br nodeindex="132"><span id="more-1244" nodeindex="133"></span><br nodeindex="134">
+First we need to install all componenents:</p>
+<p nodeindex="27" scoreaddedtoparent="52" rilhts="1"><code nodeindex="135"># apt-get install compiz compizconfig-settings-manager compizconfig-backend-gconf compiz-fusion-plugins-extra compiz-fusion-plugins-main compiz-fusion-plugins-unsupported cairo-dock gnome-tweak-tool</code></p>
+<p nodeindex="28" scoreaddedtoparent="60">Now we create a new X session, which can be chosen in our login screen. First we need to make sure that GNOME understands that compiz is actually a kind of window manager. This is done by creating a desktop file /usr/share/applications/compiz.desktop:</p>
+<p nodeindex="29" scoreaddedtoparent="68"><code nodeindex="136">[Desktop Entry]<br nodeindex="137">
+Type=Application<br nodeindex="138">
+Name=Compiz Window Manager<br nodeindex="139">
+Exec=/usr/bin/compiz<br nodeindex="140">
+NoDisplay=true<br nodeindex="141">
+X-GNOME-Autostart-Phase=WindowManager<br nodeindex="142">
+X-GNOME-Provides=windowmanager<br nodeindex="143">
+X-GNOME-Autostart-Notify=true</code></p>
+<p nodeindex="30" scoreaddedtoparent="76">Then we create a custom GNOME Session which starts compiz as window manager and cairo-dock as desktop shell. The file /usr/share/gnome-session/sessions/cairo-dock.session looks like this:</p>
+<p nodeindex="31" scoreaddedtoparent="84"><code nodeindex="144">[GNOME Session]<br nodeindex="145">
+Name=cairo-dock</code></p>
+<p nodeindex="32" scoreaddedtoparent="92"><code nodeindex="146">RequiredComponents=cairo-dock;gnome-settings-daemon;<br nodeindex="147">
+RequiredProviders=windowmanager;notifications;<br nodeindex="148">
+DefaultProvider-windowmanager=compiz<br nodeindex="149">
+DefaultProvider-notifications=notification-daemon<br nodeindex="150"></code></p>
+<p nodeindex="33" scoreaddedtoparent="100">We create a little shell script /usr/local/bin/gnome-session-cairo-dock which starts up our custom GNOME session:</p>
+<p nodeindex="34" scoreaddedtoparent="108"><code nodeindex="151">#! /bin/sh<br nodeindex="152">
+exec gnome-session --session cairo-dock "$@"</code></p>
+<p nodeindex="35" scoreaddedtoparent="116">The script needs to be executable:<br nodeindex="153"><code nodeindex="154"># chmod +x /usr/local/bin/gnome-session-cairo-dock</code></p>
+<p nodeindex="36" scoreaddedtoparent="124">And finally we create the /usr/share/xsessions/gnome-cairo-dock.desktop file which defines the custom X session:</p>
+<p nodeindex="37" scoreaddedtoparent="132"><code nodeindex="155">[Desktop Entry]<br nodeindex="156">
+Name=GNOME + Cairo Dock<br nodeindex="157">
+Exec=/usr/local/bin/gnome-session-cairo-dock<br nodeindex="158">
+TryExec=gnome-session<br nodeindex="159">
+Icon=<br nodeindex="160">
+Type=Application<br nodeindex="161"></code></p>
+<p nodeindex="38" scoreaddedtoparent="140">Now when you log out, you will see the GNOME + cairo-dock session in your login manager.</p>
+<p nodeindex="39" scoreaddedtoparent="148">After that you can start up gnome-tweak-tool to customize your environment. You might want to change the default fonts, choose to have the file manager to handle the desktop (so that you will get desktop icons) and change the default theme. If you need to change the fonts of the desktop icons, use this command:</p>
+<p nodeindex="40" scoreaddedtoparent="156"><code nodeindex="162">$ gsettings set org.gnome.nautilus.desktop font "Cantarell 9"</code></p>
+<p nodeindex="41" scoreaddedtoparent="164">Of course you can replace the Cantarell font or 9 pt font size by your preference.</p>
+<p nodeindex="42" scoreaddedtoparent="172">In cairo-dock, I enabled these plug-ins: Applications menu, Clipboard history, Clock, Log Out, Motion Blur, Notifications Area Old, Recent-Events, Show Desktop, Sound Control. Right click on an applet and choose “Configure this applet” to set up various options. I place the notification area at the top of the desktop: in the Desklet tab page, set the desklet position to -220, 0 and under visibibily check “detached from dock” and “should be visible on all desktops” and set visiblity to “keep above”.</p>
+<p nodeindex="43" scoreaddedtoparent="178">With the ccsm utility you can configure your compiz window mananager. First click on Preferences in the left side, and select the GConf configuration back-end. Then enable and configure any plug-in you want. Here are some that I enabled: Gnome compatibility, Expo, Desktop Cube, Fade to desktop, trailfocus, animations, Login/logout, Window Previews, Shift switcher, Move window, Resize window, Scale, Place windows. If you have the problem that you have no window manager when lauching your GNOME + Cairo session, then set the above options in ccsm first from another desktop environment.</p>
+</div></div>
+      </div></div></div>
+
+            <footer>
+            	<div class="wrapper">
+                </div>
+            </footer>
+
+        </div>
+
+    <div id="confirmation" class="popover-new popover-new-bottom shown" style="display: block; left: 652px; top: 625px;"><div class="arrow"></div><div class="confirmation_dialog"><h5>Are you sure?</h5><a class="button button-small button-secondary" href="http://getpocket.com/a/read/150900032#">Cancel</a><a class="button button-small button-important" href="http://getpocket.com/a/read/150900032#">Delete</a><div class="clear"></div></div></div><div class="clickguard" style="display: none;"></div><div id="confirmation" class="popover-new popover-new-bottom shown" style="display: block; left: 652px; top: 625px;"><div class="arrow"></div><div class="confirmation_dialog"><h5>Are you sure?</h5><a class="button button-small button-secondary" href="http://getpocket.com/a/read/150900032#">Cancel</a><a class="button button-small button-important" href="http://getpocket.com/a/read/150900032#">Delete</a><div class="clear"></div></div></div><div class="clickguard" style="display: none;"></div><div id="addMenu" class="popover-new addmenu-hideconnect shown popover-new-bottomright" style="display: block; left: 297px; top: 120px;"><div class="arrow"></div><div class="container"><h5>Save an item to Pocket</h5><p>For even easier saving, <a href="http://getpocket.com/a/read/150900032#" class="install_ext">Connect</a> the Pocket Button</p><input type="text" placeholder="http://..."><a href="http://getpocket.com/a/read/150900032#" class="button button-disabled">Save</a></div></div><div class="clickguard" style="display: none;"></div><div id="styleMenu" class="popover-new popover-new-fixed popover-new-bottomleft shown" style="display: block; left: 886px; top: 67px;"><div class="arrow"></div><div id="subnav" class="pkt-nav clearfix">
+      <ul class="icons clearfix textoptions_font">
+            <li id="submenu_font_serif"><a title="Serif" href="http://getpocket.com/a/read/150900032#" class="selected">Serif</a></li>
+            <li id="submenu_font_sans"><a title="Sans Serif" href="http://getpocket.com/a/read/150900032#">Sans Serif</a></li>
+      </ul>
+      <ul class="icons clearfix textoptions_fontsize">
+            <li id="submenu_font_down"><a title="Decrease Font Size" href="http://getpocket.com/a/read/150900032#">Decrease Font Size</a></li>
+            <li id="submenu_font_placeholder">A</li> 
+            <li id="submenu_font_up"><a title="Increase Font Size" href="http://getpocket.com/a/read/150900032#">Increase Font Size</a></li>
+      </ul>
+      <ul class="icons clearfix textoptions_theme">
+            <li id="submenu_theme_light"><a title="Change to Light Theme" href="http://getpocket.com/a/read/150900032#" class="selected">Light</a></li>
+            <li id="submenu_theme_dark"><a title="Change to Dark Theme" href="http://getpocket.com/a/read/150900032#">Dark</a></li>
+            <li id="submenu_theme_sepia"><a title="Change to Sepia Theme" href="http://getpocket.com/a/read/150900032#">Sepia</a></li>
+      </ul>
+</div></div><div class="clickguard" style="display: none;"></div></div>
+    <script>
+    var ServerSettings = {};
+    ServerSettings.externalUserSettings = '{\"lastQueueView\":\"grid\",\"browsernotblacklisted\":true,\"newreleasewelcome\":true,\"sawwebviewoverlay\":true,\"sawemptynotice\":true}';
+    ServerSettings.GSFStatus = '{\"active\":false,\"sawinitoverlay\":false,\"extinstalled\":false,\"articleview\":false,\"articleviewconfirm\":false,\"articleviewitemactions\":false,\"saveditems\":[]}';
+    ServerSettings.language = 'en-US';
+    var dictJSON = {"smartling":{"translate_mode":"all","placeholder_format_custom":["\\{.*\\}"]},"login":{"logout":"Logout"},"confirm":{"areyousure":"Are you sure?","deleting":"Deleting","into":"into"},"cta":{"addtolist":"Add to List","archive":"Archive","cancel":"Cancel","close":"Close","connect":"Connect","connectnow":"Connect Now","delete":"Delete","favorite":"Favorite","getstarted":"Get Started","ignore":"Ignore","ok":"Ok","save":"Save","send":"Send","share":"Share","vieworiginal":"View Original"},"gsf":{"accesspocketondevices":"Access Pocket on your computer, iOS or Android devices, even without an internet connection.","activatefullscreenmodeagain":"Press 'd' again to activate Full Screen Mode at any time.","addtopockethere":"You can add to Pocket here. Find a cool article or YouTube video to test it out.","and":"and","availableon":"Available on","buttonsitsintoolbar":"The button sits in your toolbar so you can save any page with just one click.","clicktosaveapage":"Click to save a page you want to view later.","congrats":"Congrats","connectingpocketbuttonprovides":"Connecting the Pocket button provides the best way to save pages to Pocket.","connectmobile":"Connect your mobile devices - it even works offline!","doesnotviewtransmit":"Pocket does not view, transmit,","findarticlevideo":"Find another article or video.","fullscreenmode":"Full Screen Mode","goto":"Go to","greatplacesavevideos":"Pocket is also a great place to save videos.","haveyouinstalledpocketbutton":"Have you installed the *Pocket Button*?","installingthepocketbuttonclick":"Installing the Pocket button adds a button to your browser that lets you save items with one click.","itemactions":"Item Actions","learnmoreways":"Learn more ways","leavefullscreenmode":"Press 'd' on your keyboard to leave Full Screen Mode, or simply move your mouse to the top of your browser window.","morequestions":"More questions?","orstorebrowsinghistory":"or store your browsing history.","perfectarticles":"Did you know that Pocket is perfect for reading articles? Go ahead and save an article to read later.","pocketbuttonconnected":"Pocket Button connected","pocketdisplaysoptimized":"Pocket displays this optimized view for articles","pockettogo":"Take Pocket to go","readingpositionsaved":"If you’d like to return to this page later, your reading position will be automatically synced across devices.","returntogetpocket":"Then return to GetPocket.com to view your list.","savedfewnice":"You've saved a few items. Nicely done!","savedfirstitemclick":"You saved your first item to Pocket. Click it to check it out.","savedfirstitemclickalt":"Saved items are shown here. Click an item to check it out.","savefirstitem":"Save your first item","savefromyoutube":"Save something from YouTube and give it a try.","savemore":"Save more to Pocket","savesomething":"Save Something to Pocket","savethingsviewlater":"Save things you want to view later to Pocket.","skipthisstep":"Skip this step","success":"Success","takepocketwithyou":"Take Pocket with you.","thisisarticleview":"This is the Article View","thismodehidestoolbar":"This mode hides the top toolbar to help you focus entirely on article content.","toseeoriginal":"To see the original, click the share button and select 'View in Browser.'","toviewarchived":"To view your archived items, tap Pocket above and then select \"Archive\"","ventureoutandsave":"Venture out and save your first item using the Pocket Button. Try out a news article or YouTube video.","youarchivefavshare":"You can Archive, Favorite, or Share on this page.","yourereadytosave":"You're ready to save anything to Pocket.","youvesignedupforpocket":"You've successfully signed up for Pocket - the simple way to save things you want to view later."},"help":{"archiveselected":"Archive Selected Item","archiveitemorsave":"Archive Item or Save Item to List","decreaseincreasefont":"Decrease/increase Font Size","favitem":"Favorite Item","favoriteselected":"Favorite Selected Item","filterarticlesvidsimages":"Filter Articles, Videos and Images","fullscreenmode":"Activate/Deactivate Full Screen Mode","focussearch":"Focus on Search","keyboardqueueview":"Keyboard shortcuts in queue view","keyboardreaderview":"Keyboard shortcuts in reader view","openselected":"Open Selected Item","pocketmenu":"Pocket Menu","selectnextprev":"Select Next/Previous Item","switchhomefavarchive":"Switch to Home, Favorites and Archive","togglesorting":"Toggle Sorting by Newest/Oldest","toggletilelist":"Toggle Tile/List View","viewhelp":"View Help Overlay","vieworiginal":"View Original","vieworigselected":"View Original Selected Item"},"queue":{"addtag":"Add Tag","afriend":"A friend","allitems":"All Items","archive":"Archive","clearsearch":"Clear Search","cleartagselection":"Clear Tag Selection","confirmyouremail":"Confirm Your Email","contentfilter":"Content Filter","couldntresend":"Couldn't resend the confirmation email. Please try again.","dayago":"{number_of_days} day ago","daysago":"{number_of_days} days ago","delete":"Delete","favorite":"Favorite","filter_articles":"Articles","filter_images":"Images","filter_videos":"Videos","foreveneasiersaving":"For even easier saving","hassharedconfirm":"has shared something with you in Pocket. To view it, please confirm your email:","hourago":"{number_of_hours} hour ago","hoursago":"{number_of_hours} hours ago","itemselected":"Item Selected","itemsselected":"Items Selected","justnow":"just now","listview":"List View","mainmenu_archive":"Archive","mainmenu_favorites":"Favorites","mainmenu_help":"Help","mainmenu_home":"Home","mainmenu_options":"Options","minago":"{number_of_mins} min ago","minsago":"{number_of_mins} mins ago","moretags":"+ {number_of_tags} more","readd":"Re-add","resendconfirmation":"Resend Confirmation","saveanitemtopocket":"Save an item to Pocket","saveurl":"Save a URL","searchbytitleurl":"Search by title or URL","section_archive":"Archive","section_favorites":"Favorites","section_queue":"Queue","sharedby":"Shared by","sharedthiswithyou":"shared this with you","sharefrom":"Share from","sharesfrom":"Shares from","sortingbynewest":"Sorting by newest first","sortingbyoldest":"Sorting by oldest first","switchtolistview":"Switch to List View","switchtotileview":"Switch to Tile View","tag_untaggeditems":"Untagged Items","tagfilter":"Tag Filter","thepocketbutton":"the Pocket Button","tilelistviewtoggle":"Tile/List View Toggle","tileview":"Tile View","unfavorite":"Unfavorite","viewingallarticles":"Viewing All Articles","webviewwarn_webonlydetail":"If you open a page that is not an article or video, Pocket will display the original web page.","webviewwarn_webonlyview":"This saved item is a web only view, and will open in a new tab."},"manual":{},"notice":{"designlightermoreintuitive":"The design is lighter, cleaner and more intuitive","desktopbulkedit":"Desktop-style Bulk Edit","enjoypocketforweb":"We hope you enjoy the new Pocket for Web","improvedarticleview":"Improved Article View","keyboardnavigation":"Keyboard navigation","lothaschanged":"A lot has changed, including","manuallysaveurl":"Manually save a URL","newpocketcombinesfeatures":"The new Pocket for web combines the best features from our mobile apps with high quality web design","readmoreonblog":"You can read more on our *blog* and click the button below to get started","refreshedui":"Refreshed, simplified UI","savemanuallyurl":"You can now save by manually entering a URL. Just press the \"+\" button in the toolbar","selectbulkitems":"Select items while holding Command/Control or Shift to perform actions in bulk","tunedreadingexperience":"We analyzed and tuned every aspect of the reading experience to make it even more enjoyable and easier to use","useshortcutstomove":"Use shortcuts to move through your list, perform actions, and more. Just press \"?\" to view the shortcut guide","welcometopocketforweb":"Welcome to Pocket for Web"},"notification":{"addedtolist":"Added to List","archived":"Archived","deleted":"Deleted","favorited":"Favorited","invalidaddurl":"The URL is invalid and cannot be saved. Please use a valid URL beginning with http:// or https://","itemadded":"Item added","itemarchived":"Item archived","itemdeleted":"Item deleted","itempdated":"Item updated","itemsadded":"Items added","itemsarchived":"Items archived","itemsdeleted":"Items deleted","itemssynced":"Items synced","itemsupdated":"Items updated","itemsynced":"Item synced","savedtolist":"Saved to List","tagged":"Tagged","tagsarelimited":"Tags are limited to 25 characters, please shorten the tag","uhoh":"Uh oh.","unexpectederror":"Uh oh. There was an unexpected error when making a request to the server. Please try reloading the page.","unfavorited":"Unfavorited","viewinbox":"View Inbox"},"reader":{"goback":"Go Back","textoptions":"Text Options","serif":"Serif","sansserif":"Sans Serif","decreasefontsize":"Decrease Font Size","increasefontsize":"Increase Font Size","light":"Light","dark":"Dark","sepia":"Sepia","changelight":"Change to Light Theme","changedark":"Change to Dark Theme","changesepia":"Change to Sepia Theme","notarticlenotdisplaywell":"This page doesn't appear to be an article and therefore may not display well in the Article View","maywanttoswitch":"You may want to switch to the *full web page view*","ifshouldbearticle":"If you know there should be an article here, help improve the article parser by *reporting this page*","thanks":"Thanks","photoby":"Photo by","untitledfrom":"Untitled from"},"search":{"archiveemptymsg":"Pocket remembers the content that you have already read, watched and viewed.<br>When you archive an item, it'll appear here.","articles":"articles","charstosearch":"characters to search","favoritesemptymsg":"Keep track of the content you've liked: To favorite an item, click the star next to it.","found":"found","images":"images","inyour":"in your","item":"item","items":"items","learnhow":"Learn how","matchedyoursearchfor":"matched your search for","no":"No","noresultsfound":"No results found","pleaseenteratleast":"Please enter at least","that":"that","thereareno":"There are no","toaddcontenttopocket":"to add content to Pocket.","unabledtosearch":"Unable to search","videos":"videos","youhavenofavorites":"You have no favorites","yourarchiveismpty":"Your Archive is Empty","yourqueueisempty":"Your Queue is Empty"},"sharing":{"sendtofriend":"Send to Friend","to":"To","comment":"Comment"},"tag":{"addtags":"Add tags","areuntagged":"are untagged","deletetag":"Delete Tag?","edittags":"Edit tags","fromanyitemsthathavebeentagged":"from any items that have been tagged with it.","havebeentaggedwith":"have been tagged with","nottagged":"Not tagged","nountaggeditems":"No untagged items","tagalreadyexists":"Tag already exists","tagexistswouldyoulikemerge":"already exists, would you like to merge","tagrenamedfrom":"Tag renamed from","tagto":"to","thiswillremove":"This will remove"}};
+    </script>
+    <script src="./Creating your own GNOME session based on cairo-dock and Compiz_files/global.min.js"></script>
+        <!--app-->
+    <script>
+    if (typeof PocketAnalytics == 'object')
+    {
+        PocketAnalytics.init(1385199735,'16c4520926314a3ddf15027fb2e4d067');
+    }
+    if (typeof PocketUserApps == 'object')
+    {
+        PocketUserApps.init(1385199735,'16c4520926314a3ddf15027fb2e4d067');
+        PocketUserApps.userId = 5748951;
+    }
+
+    var formCheck = '1a83fb277282e8e326b4d879a4fab8af';
+
+    ServerSettings.fromSignup = false;
+
+        </script>
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Creating your own GNOME session based on cairo-dock and Compiz_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try{
+var pageTracker = _gat._getTracker("UA-370613-9");
+pageTracker._trackPageview();} catch(err) {}</script>
+
+
+
+<h2 id="queue_title" class="dropSelector titleItem titleSelector mainMenu" style="display: none;"><a class="queue"><span>Home</span></a><div class="popover-new popover-new-bottom" style="top: 48px; left: -82px;"><div class="arrow"></div><ul><li class="queue selected" val="queue"><a href="http://getpocket.com/a/read/150900032#">Home</a></li><li class="favorites" val="favorites"><a href="http://getpocket.com/a/read/150900032#">Favorites</a></li><li class="archive" val="archive"><a href="http://getpocket.com/a/read/150900032#">Archive</a></li><li class="options" val="options"><a href="http://getpocket.com/a/read/150900032#">Options</a></li><li class="help" val="help"><a href="http://getpocket.com/a/read/150900032#">Help</a></li><li class="logout last" val="logout"><a href="http://getpocket.com/a/read/150900032#">Logout</a></li></ul></div></h2><style id="style-selection">::selection{ background-color:#cfeceb; } ::-moz-selection{ background-color:#cfeceb; }</style><div class="hint hint-bottom" style="left: 191px; top: 54px;">Go Back</div><div class="pkt_toast_wrapper" style="display: none;"><div class="pkt_toast">Added to List</div></div></body></html>
