@@ -1,0 +1,19 @@
+#!/bin/bash
+port=3333
+
+
+
+#ip=$(cat status | grep -o -P '(?<=from).*(?=port)')
+#echo $ip
+
+
+#nc -l -v $port | while read LINE; do notify-send "$ip" "$msg" -i gtk-network; done
+
+
+
+
+
+while true; do nc -l -v $port 2> status | while read msg; do ip=$(cat status | grep -o -P '(?<=from).*(?=port)') && notify-send "$ip" "$msg" -i gtk-network; done ; done
+
+
+
