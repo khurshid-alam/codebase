@@ -187,6 +187,17 @@ Upload to specific repo Without Password (HTTP):
 Change HTTP To SSH:
 
     git remote set-url origin git@github.com:username/repo.git
+    
+Ignore locally deleted folders before commit:
+
+    git ls-files --deleted -z | git update-index --assume-unchanged -z --stdin
+    
+Empty directory OR Ignore files in a directory: Create a `.gitignore` file inside that directory that contains four lines:
+
+    # Ignore everything in this directory
+    *
+    # Except this file
+    !.gitignore
 
 > for ssh public-key paraphrase is used.
 
