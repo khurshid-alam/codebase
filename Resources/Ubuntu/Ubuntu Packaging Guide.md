@@ -1,5 +1,5 @@
 
-Ubuntu Packaging Guide
+<i class="icon-share"></i>Ubuntu Packaging Guide
 ----------------------
 
 https://wiki.ubuntu.com/PackagingGuide/Complete
@@ -8,7 +8,8 @@ https://wiki.ubuntu.com/PackagingGuide/Complete
 ----------
 
 
-**BZR HELP:**
+<i class="icon-file"></i>BZR HELP:
+--------------------------------------
 
 First Choose a suitable root folder: '/home/user/Documents/Application-Projects/gwibber'
 
@@ -19,17 +20,18 @@ Check whoami first:
 
     bzr whoami
 
-> if it doesn't return bazzar id then login & set whoami in following
-> commands.
+> **NOTE:** if it doesn't return bazzar id then login & set whoami in following commands.
 
 Bzr login:
-`bzr launchpad-login khurshid-alam` #this doesn't set whoami bcz of this bug: Bug #656645
 
-set whoami manually:
+    bzr launchpad-login khurshid-alam
+
+
+> **NOTE:** If this doesn't set whoami bcz of this bug: Bug #656645, then set whoami manually:
 
     bzr whoami "Khurshid Alam <khurshid.alam@linuxmail.org>"
 
-> This should be done once
+> **NOTE:** This should be done once
 
 Initialize bzr:
 
@@ -43,8 +45,7 @@ Initial Commit:
 
     bzr commit -m "Initial revision" 
 
-> By supplying commit with the parameter -m you avoid a text editor
-> popping up asking you for a commit message.
+> **NOTE:** By supplying commit with the parameter -m you avoid a text editor popping up asking you for a commit message.
 
 See the diff:
 
@@ -59,8 +60,9 @@ Make any changes to files, then commit again.
 
 it will show something like this:
 
-    modified Starfire.cs 
-    Committed revision 2.
+>**Ouput:** 
+modified Starfire.cs 
+Committed revision 2.
 
  
 
@@ -69,25 +71,23 @@ Finally Published it to bazzar:
 
     bzr push lp:~khurshid-alam/gwibber/gwibber-hack/
 
-> When adding new file, bzr add must be done to start tracking on those
-> file while staying on root of project dir.Add some new file to folder,
-> then run:
+> **NOTE:** When adding new file, bzr add must be done to start tracking on those file while staying on root of project dir.Add some new file to folder, then run:
 
     bzr add
     bzr commit -m " add two files"
 
 DONE!
 
-*http://www.emcken.dk/weblog/archives/200-bazaar-bzr-howto-creating-your-own-branch.html*
+<i class="icon-share "></i> *http://www.emcken.dk/weblog/archives/200-bazaar-bzr-howto-creating-your-own-branch.html*
 
 
 ----------
 
 
-PPA HELP:
+<i class="icon-file"></i>PPA HELP:
 ---------
 
-http://askubuntu.com/questions/101763/how-to-upload-theme-files-into-a-ppa
+<i class="icon-share "></i> http://askubuntu.com/questions/101763/how-to-upload-theme-files-into-a-ppa
 
 Example : create a new folder. for ex settings-maverick.
 Put requires files in it.
@@ -95,13 +95,12 @@ Run: (To create necessary under debian.)
 
     DEBFULLNAME="Khurshid Alam (Technologist)" dh_make -n -s -e khurshid.alam@linuxmail.org 
 
-> This will help to sign the package with gpg key. The id should be
-> identical with gpg key id format.to check
-> 
-> run `gpg --list-keys`. The UID is the proper format. This can also be
-> used with `dhbuild -k` option when creating deb package from computer.
+> **NOTE:** 
 
-https://bugs.launchpad.net/ubuntu/+source/dh-make/+bug/875705
+> - This will help to sign the package with gpg key. The id should beidentical with gpg key id format.
+> - To check run `gpg --list-keys`. The UID is the proper format. This can also be used with `dhbuild -k` option when creating deb package from computer.
+
+<i class="icon-share "></i> https://bugs.launchpad.net/ubuntu/+source/dh-make/+bug/875705
 
 Enter into debian folder & delete .ex & .EX files.
 
@@ -122,7 +121,7 @@ or
 
     debuild -S
 
-> What the -S flag does is tell debuild to build a source package using
+> **NOTE:** What the -S flag does is tell debuild to build a source package using
 > another script, dpkg-buildpackage, together with fakeroot, which
 > grants us fake root privileges while making the package. It will take
 > the .orig.tar.gz file and produce a .diff.gz (the difference between
@@ -162,7 +161,7 @@ This command upload package & changes to ppa.
 
 Private PPA:
 
-https://launchpad.net/~abogani/+archive/e3natty
+<i class="icon-share "></i> https://launchpad.net/~abogani/+archive/e3natty
 
 
 ----------
@@ -207,15 +206,15 @@ Empty directory OR Ignore files in a directory: Create a `.gitignore` file insid
 Sources:
 --------
 
-http://www.vogella.com/articles/Git/article.html
+<i class="icon-share "></i> http://www.vogella.com/articles/Git/article.html
 
 
 Extra-Tweaks:
-http://cheat.errtheblog.com/s/git/
+<i class="icon-share "></i> http://cheat.errtheblog.com/s/git/
 
-http://github.github.com/github-flavored-markdown/
+<i class="icon-share "></i> http://github.github.com/github-flavored-markdown/
 
-http://cantina.co/2012/01/16/github-private-git-repos-dropbox/
+<i class="icon-share "></i> http://cantina.co/2012/01/16/github-private-git-repos-dropbox/
 
 
 The Debian package management tools:
@@ -225,7 +224,7 @@ sudo sed -i -e 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources
 
 
 
-http://www.debian.org/doc/manuals/debian-faq/ch-pkgtools.en.html
+<i class="icon-share "></i> http://www.debian.org/doc/manuals/debian-faq/ch-pkgtools.en.html
 
 
 
